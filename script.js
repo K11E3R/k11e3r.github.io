@@ -15,6 +15,7 @@ const savedTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 
 
 // Apply saved theme on page load
 document.documentElement.setAttribute('data-theme', savedTheme);
+console.log('Theme set to:', savedTheme);
 
 // Toggle between dark and light mode
 function toggleTheme() {
@@ -22,9 +23,19 @@ function toggleTheme() {
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
     document.documentElement.setAttribute('data-theme', newTheme);
+    console.log('Theme toggled to:', newTheme);
     
     // Save preference to localStorage
     localStorage.setItem('theme', newTheme);
+}
+
+// Force theme refresh
+function forceThemeRefresh() {
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    document.documentElement.setAttribute('data-theme', '');
+    setTimeout(() => {
+        document.documentElement.setAttribute('data-theme', currentTheme);
+    }, 10);
 }
 
 // Navigation and Scrolling
@@ -153,6 +164,7 @@ document.querySelectorAll('.stat').forEach((el, index) => {
 
 // Event Listeners
 window.addEventListener('scroll', handleScroll);
+window.addEventListener('DOMContentLoaded', forceThemeRefresh);
 themeToggle.addEventListener('click', toggleTheme);
 burger.addEventListener('click', toggleNav);
 navItems.forEach(item => item.addEventListener('click', closeNav));

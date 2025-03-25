@@ -339,46 +339,57 @@ section {
 }
 
 .theme-toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-left: 1rem;
     cursor: pointer;
-    font-size: 1.25rem;
     display: flex;
     align-items: center;
-    justify-content: center;
-    width: 2.5rem;
-    height: 2.5rem;
+    justify-content: space-between;
+    z-index: 5;
+    background: rgba(28, 28, 74, 0.6);
     border-radius: var(--border-radius-full);
-    transition: background-color var(--transition-fast);
-    position: relative;
-    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.theme-toggle:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.theme-toggle i {
+    font-size: 1rem;
+    transition: all var(--transition-normal);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .theme-toggle .fa-sun {
-    position: absolute;
-    opacity: 0;
-    transform: rotate(-180deg) scale(0);
-    transition: all var(--transition-normal);
-    color: #ffd700;
+    color: #ffba08;
+    right: 8px;
 }
 
 .theme-toggle .fa-moon {
-    opacity: 1;
-    transform: rotate(0) scale(1);
-    transition: all var(--transition-normal);
-    color: #c8d6e5;
+    color: #8896e9;
+    left: 8px;
 }
 
-body.light-mode .theme-toggle .fa-sun {
-    opacity: 1;
-    transform: rotate(0) scale(1);
+[data-theme="dark"] .fa-sun {
+    opacity: 0.3;
+    transform: translateY(-50%) scale(0.8);
 }
 
-body.light-mode .theme-toggle .fa-moon {
-    opacity: 0;
-    transform: rotate(180deg) scale(0);
+[data-theme="dark"] .fa-moon {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+[data-theme="light"] .fa-sun {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+[data-theme="light"] .fa-moon {
+    opacity: 0.3;
+    transform: translateY(-50%) scale(0.8);
 }
 
 .burger {
@@ -595,6 +606,23 @@ body.dark-mode .social-icon .fa-github {
     margin-bottom: var(--spacing-lg);
     font-size: 1.1rem;
     line-height: 1.8;
+}
+
+.about-button {
+    margin-top: var(--spacing-xl);
+    text-align: center;
+}
+
+.about-button .btn {
+    padding: 0.8rem 2rem;
+    font-size: 1.1rem;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+}
+
+.about-button .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .about-stats {
@@ -1280,27 +1308,49 @@ body.dark-mode .social-icon .fa-github {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 5;
+    background: rgba(28, 28, 74, 0.6);
+    border-radius: var(--border-radius-full);
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .theme-toggle i {
     font-size: 1rem;
-    transition: opacity var(--transition-normal);
+    transition: all var(--transition-normal);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .theme-toggle .fa-sun {
     color: #ffba08;
+    right: 8px;
 }
 
 .theme-toggle .fa-moon {
     color: #8896e9;
+    left: 8px;
 }
 
 [data-theme="dark"] .fa-sun {
     opacity: 0.3;
+    transform: translateY(-50%) scale(0.8);
+}
+
+[data-theme="dark"] .fa-moon {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+}
+
+[data-theme="light"] .fa-sun {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
 }
 
 [data-theme="light"] .fa-moon {
     opacity: 0.3;
+    transform: translateY(-50%) scale(0.8);
 }
 
 /* Light mode specific hover states */
