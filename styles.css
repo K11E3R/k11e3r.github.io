@@ -56,10 +56,90 @@
     --secondary-color: #00a3cc;
     --text-color: #1a1a2e;
     --text-color-light: #4a4a6a;
-    --bg-color: #f8f9fa;
-    --bg-color-light: #e9ecef;
+    --bg-color: #f0f2ff;
+    --bg-color-light: #e0e5ff;
     --card-bg: #ffffff;
     --card-border: #dee2e6;
+}
+
+/* Light Mode Background */
+.light-mode .stars {
+    background: #e0e5ff url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat;
+    opacity: 0.3;
+}
+
+.light-mode .twinkling {
+    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat;
+    animation: move-twinkle 200s linear infinite;
+    opacity: 0.2;
+}
+
+/* Light Mode-specific styles */
+.light-mode .section-title {
+    text-shadow: 0 0 10px rgba(110, 68, 255, 0.3);
+}
+
+.light-mode .navbar {
+    background-color: rgba(240, 242, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(76, 53, 204, 0.15);
+}
+
+.light-mode .about, 
+.light-mode .contact {
+    background-color: rgba(240, 242, 255, 0.8);
+    box-shadow: 0 10px 30px rgba(76, 53, 204, 0.1);
+}
+
+.light-mode .skill-item,
+.light-mode .project-card,
+.light-mode .contact-form,
+.light-mode .contact-method i {
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 5px 15px rgba(76, 53, 204, 0.1);
+    border: 1px solid rgba(76, 53, 204, 0.1);
+}
+
+.light-mode .project-tech span {
+    background-color: rgba(240, 242, 255, 0.9);
+    color: var(--text-color);
+}
+
+.light-mode .footer {
+    background-color: rgba(224, 229, 255, 0.9);
+    border-top: 1px solid rgba(76, 53, 204, 0.1);
+}
+
+.light-mode .social-links a {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.light-mode .form-group input,
+.light-mode .form-group textarea {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(76, 53, 204, 0.2);
+}
+
+.light-mode .orbit-circle {
+    border: 2px dotted rgba(76, 53, 204, 0.3);
+}
+
+.light-mode .project-btn {
+    background-color: rgba(240, 242, 255, 0.8);
+}
+
+.light-mode .stat::before {
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    opacity: 0.8;
+}
+
+.light-mode .social-icon .fa-github {
+    color: #24292e;
+}
+
+.light-mode .skill-item i,
+.light-mode .contact-method i,
+.light-mode .stat-icon {
+    color: var(--primary-color);
 }
 
 /* Space Background */
