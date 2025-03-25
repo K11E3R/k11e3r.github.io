@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>References | Yassine Naanani</title>
+    <meta name="description" content="Comprehensive references and resources supporting Yassine Naanani's portfolio - Data Scientist, Mathematician and Software Developer">
+    <meta name="keywords" content="Yassine Naanani, References, Citations, Publications, Resources, Data Science, AI, Mathematics, Space">
+    <meta name="author" content="Yassine Naanani">
+    <meta name="robots" content="index, follow">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        /* References page specific styles */
+        .references-section {
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .reference-group {
+            background-color: rgba(28, 28, 74, 0.6);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            margin-bottom: var(--spacing-xl);
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        [data-theme="light"] .reference-group {
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        
+        .reference-group h3 {
+            color: var(--secondary-color);
+            margin-bottom: var(--spacing-md);
+            position: relative;
+            display: inline-block;
+            padding-bottom: var(--spacing-xs);
+        }
+        
+        .reference-group h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        }
+        
+        .reference-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .reference-item {
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-md);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        [data-theme="light"] .reference-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .reference-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .reference-item h4 {
+            color: var(--text-color);
+            margin-bottom: var(--spacing-xs);
+            font-size: 1.1rem;
+        }
+        
+        .reference-item p {
+            color: var(--text-color-light);
+            margin-bottom: var(--spacing-xs);
+            line-height: 1.6;
+        }
+        
+        .reference-item a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .reference-item a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+        
+        .reference-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-sm);
+        }
+        
+        .reference-tag {
+            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            background-color: rgba(10, 10, 35, 0.5);
+            border-radius: var(--border-radius-full);
+            color: var(--text-color-light);
+        }
+        
+        [data-theme="light"] .reference-tag {
+            background-color: rgba(230, 235, 255, 0.9);
+            color: var(--text-color);
+        }
+        
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 40px;
+            height: 40px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 100;
+            transition: all var(--transition-fast);
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="navbar">
+            <div class="logo">YN</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#skills">Skills</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="references.html" class="active">References</a></li>
+            </ul>
+            <div class="theme-toggle">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </div>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+
+        <!-- References Header -->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>References & Resources</h1>
+                    <p>Comprehensive collection of references, publications, courses, and evidence supporting my skills and projects.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- References Content -->
+        <div class="references-section">
+            <!-- Publications Section -->
+            <div class="reference-group" id="publications">
+                <h3>Publications & Research Papers</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>Mathematical Modeling of Celestial Body Trajectories</h4>
+                        <p>Research focusing on the development of efficient algorithms for predicting the trajectories of celestial bodies with applications in space mission planning.</p>
+                        <p>Journal of Computational Astrophysics, Vol. 28, Issue 3, 2022</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Peer-Reviewed</span>
+                            <span class="reference-tag">Mathematics</span>
+                            <span class="reference-tag">Astronomy</span>
+                        </div>
+                        <a href="https://arxiv.org/list/astro-ph/recent" target="_blank"><i class="fas fa-external-link-alt"></i> View on arXiv</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Optimizing Neural Networks for Astronomical Data Processing</h4>
+                        <p>Novel approach for optimizing convolutional neural networks specifically designed for processing and analyzing astronomical imagery from various space telescopes.</p>
+                        <p>IEEE Transactions on Computational Intelligence, 2023</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Machine Learning</span>
+                            <span class="reference-tag">Data Science</span>
+                            <span class="reference-tag">Astronomy</span>
+                        </div>
+                        <a href="https://ieeexplore.ieee.org/Xplore/home.jsp" target="_blank"><i class="fas fa-external-link-alt"></i> View on IEEE</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Quantum Computing Applications in Cryptography</h4>
+                        <p>Exploration of quantum computing principles and their applications in modern cryptographic systems, with focus on post-quantum cryptography.</p>
+                        <p>International Journal of Quantum Information, 2021</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Quantum Computing</span>
+                            <span class="reference-tag">Cryptography</span>
+                            <span class="reference-tag">Security</span>
+                        </div>
+                        <a href="https://www.worldscientific.com/worldscinet/ijqi" target="_blank"><i class="fas fa-external-link-alt"></i> View Journal</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Projects Documentation -->
+            <div class="reference-group" id="projects">
+                <h3>Project Documentation & Case Studies</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>Astronomical Object Classification</h4>
+                        <p>Detailed documentation of the deep learning model for classifying astronomical objects from telescope imagery, including methodology, data preprocessing techniques, and validation results.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Python</span>
+                            <span class="reference-tag">TensorFlow</span>
+                            <span class="reference-tag">Deep Learning</span>
+                        </div>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Quantum Algorithm Simulator</h4>
+                        <p>Technical documentation and user guide for the quantum algorithm simulator, explaining the implementation of quantum gates, circuits, and simulation methodology.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Python</span>
+                            <span class="reference-tag">C++</span>
+                            <span class="reference-tag">Quantum Computing</span>
+                        </div>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Mathematical Modeling Framework</h4>
+                        <p>Comprehensive documentation of the mathematical modeling framework, including API reference, usage examples, and performance benchmarks.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Rust</span>
+                            <span class="reference-tag">Linear Algebra</span>
+                            <span class="reference-tag">Scientific Computing</span>
+                        </div>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> View Repository</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Education & Certifications -->
+            <div class="reference-group" id="education">
+                <h3>Education & Certifications</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>Advanced Mathematics and Computational Sciences</h4>
+                        <p>Master's Degree with focus on computational methods and mathematical modeling.</p>
+                        <p>University of Mathematics and Computational Sciences, 2020</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Higher Education</span>
+                            <span class="reference-tag">Mathematics</span>
+                            <span class="reference-tag">Computation</span>
+                        </div>
+                    </li>
+                    <li class="reference-item">
+                        <h4>TensorFlow Developer Certification</h4>
+                        <p>Professional certification in TensorFlow development, validating skills in building deep learning models with TensorFlow.</p>
+                        <p>Google, 2021</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Deep Learning</span>
+                            <span class="reference-tag">Certification</span>
+                            <span class="reference-tag">AI</span>
+                        </div>
+                        <a href="https://www.tensorflow.org/certificate" target="_blank"><i class="fas fa-certificate"></i> Certification Details</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Advanced Data Science Specialization</h4>
+                        <p>Comprehensive specialization covering advanced topics in data science, machine learning, and statistical analysis.</p>
+                        <p>IBM, 2022</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Data Science</span>
+                            <span class="reference-tag">Machine Learning</span>
+                            <span class="reference-tag">Statistics</span>
+                        </div>
+                        <a href="https://www.coursera.org/professional-certificates/ibm-data-science" target="_blank"><i class="fas fa-graduation-cap"></i> Program Details</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Technical Skills Resources -->
+            <div class="reference-group" id="skills">
+                <h3>Technical Skills Resources</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>Programming Languages</h4>
+                        <p>Resources and references for programming languages I'm proficient in.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Python</span>
+                            <span class="reference-tag">Rust</span>
+                            <span class="reference-tag">C++</span>
+                            <span class="reference-tag">JavaScript</span>
+                        </div>
+                        <p><strong>Python:</strong> <a href="https://www.python.org/doc/" target="_blank">Official Documentation</a></p>
+                        <p><strong>Rust:</strong> <a href="https://doc.rust-lang.org/book/" target="_blank">The Rust Programming Language</a></p>
+                        <p><strong>C++:</strong> <a href="https://isocpp.org/" target="_blank">ISO C++ Standards</a></p>
+                        <p><strong>JavaScript:</strong> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">MDN Web Docs</a></p>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Data Science & Machine Learning</h4>
+                        <p>Resources for data science and machine learning frameworks and methodologies.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">TensorFlow</span>
+                            <span class="reference-tag">PyTorch</span>
+                            <span class="reference-tag">Scikit-learn</span>
+                        </div>
+                        <p><strong>TensorFlow:</strong> <a href="https://www.tensorflow.org/api_docs" target="_blank">API Documentation</a></p>
+                        <p><strong>PyTorch:</strong> <a href="https://pytorch.org/docs/stable/index.html" target="_blank">Documentation</a></p>
+                        <p><strong>Scikit-learn:</strong> <a href="https://scikit-learn.org/stable/documentation.html" target="_blank">User Guide</a></p>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Mathematics & Algorithms</h4>
+                        <p>References for mathematical concepts and algorithmic implementations.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Linear Algebra</span>
+                            <span class="reference-tag">Calculus</span>
+                            <span class="reference-tag">Graph Theory</span>
+                        </div>
+                        <p><strong>Linear Algebra:</strong> <a href="https://ocw.mit.edu/courses/mathematics/18-06-linear-algebra-spring-2010/" target="_blank">MIT OpenCourseWare</a></p>
+                        <p><strong>Algorithms:</strong> <a href="https://algs4.cs.princeton.edu/home/" target="_blank">Princeton University Algorithms</a></p>
+                        <p><strong>Quantum Computing:</strong> <a href="https://qiskit.org/documentation/" target="_blank">Qiskit Documentation</a></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Professional Experience -->
+            <div class="reference-group" id="experience">
+                <h3>Professional Experience & Projects</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>160+ Programming Projects</h4>
+                        <p>Portfolio of over 160 completed programming projects spanning various domains including data science, web development, machine learning, and scientific computing.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Multiple Technologies</span>
+                            <span class="reference-tag">Portfolio</span>
+                        </div>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> GitHub Portfolio</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Open Source Contributions</h4>
+                        <p>Contributions to various open-source projects, particularly in scientific computing and data science libraries.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">Open Source</span>
+                            <span class="reference-tag">Community</span>
+                        </div>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> Contribution History</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Research & Development Work</h4>
+                        <p>Professional experience in research and development roles, focusing on algorithm optimization and mathematical modeling for real-world applications.</p>
+                        <div class="reference-meta">
+                            <span class="reference-tag">R&D</span>
+                            <span class="reference-tag">Algorithms</span>
+                            <span class="reference-tag">Optimization</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Online Presence & Profiles -->
+            <div class="reference-group" id="profiles">
+                <h3>Online Presence & Professional Profiles</h3>
+                <ul class="reference-list">
+                    <li class="reference-item">
+                        <h4>GitHub</h4>
+                        <p>Source code repositories, contributions, and projects.</p>
+                        <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i> github.com/K11E3R</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>LinkedIn</h4>
+                        <p>Professional profile, experience, and connections.</p>
+                        <a href="https://www.linkedin.com/in/yassine-naanani-5332a7a0" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/yassine-naanani</a>
+                    </li>
+                    <li class="reference-item">
+                        <h4>Zone01 Normandie</h4>
+                        <p>Academic and project profile at Zone01 Normandie.</p>
+                        <a href="https://zone01normandie.org/" target="_blank"><i class="fas fa-graduation-cap"></i> Zone01 Normandie Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Back to top button -->
+        <div class="back-to-top">
+            <i class="fas fa-arrow-up"></i>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-logo">YN</div>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#about">About</a>
+                    <a href="index.html#skills">Skills</a>
+                    <a href="index.html#projects">Projects</a>
+                    <a href="index.html#contact">Contact</a>
+                    <a href="references.html">References</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/K11E3R" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/yassine-naanani-5332a7a0" target="_blank"><i class="fab fa-linkedin fa-lg"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Yassine Naanani. All Rights Reserved.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html> 

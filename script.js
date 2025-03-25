@@ -14,20 +14,17 @@ const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-s
 const savedTheme = localStorage.getItem('theme') || (prefersDarkMode ? 'dark' : 'light');
 
 // Apply saved theme on page load
-if (savedTheme === 'dark') {
-    document.body.classList.add('dark-mode');
-}
+document.documentElement.setAttribute('data-theme', savedTheme);
 
 // Toggle between dark and light mode
 function toggleTheme() {
-    document.body.classList.toggle('dark-mode');
+    const currentTheme = document.documentElement.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    document.documentElement.setAttribute('data-theme', newTheme);
     
     // Save preference to localStorage
-    if (document.body.classList.contains('dark-mode')) {
-        localStorage.setItem('theme', 'dark');
-    } else {
-        localStorage.setItem('theme', 'light');
-    }
+    localStorage.setItem('theme', newTheme);
 }
 
 // Navigation and Scrolling
@@ -66,7 +63,8 @@ function handleScroll() {
     
     navItems.forEach(item => {
         item.classList.remove('active');
-        if (item.getAttribute('href') === `#${currentSection}`) {
+        if (item.getAttribute('href') === `#${currentSection}` || 
+            (currentSection === 'home' && item.getAttribute('href') === 'index.html')) {
             item.classList.add('active');
         }
     });
@@ -164,105 +162,4 @@ if (contactForm) {
 }
 
 // Initialize scroll position on page load
-handleScroll();
-
-document.addEventListener('DOMContentLoaded', function() {
-    // Theme toggle functionality
-    const themeToggle = document.querySelector('.theme-toggle');
-    const body = document.body;
-    
-    // Check for saved theme preference or use default (dark)
-    const currentTheme = localStorage.getItem('theme') || 'dark';
-    
-    // Apply saved theme on page load
-    if (currentTheme === 'light') {
-        body.classList.add('light-mode');
-    }
-    
-    // Handle theme toggle click
-    themeToggle.addEventListener('click', function() {
-        // Toggle the light-mode class
-        body.classList.toggle('light-mode');
-        
-        // Save the preference
-        if (body.classList.contains('light-mode')) {
-            localStorage.setItem('theme', 'light');
-        } else {
-            localStorage.setItem('theme', 'dark');
-        }
-    });
-    
-    // Mobile menu toggle
-    const burger = document.querySelector('.burger');
-    const navLinks = document.querySelector('.nav-links');
-    
-    burger.addEventListener('click', function() {
-        navLinks.classList.toggle('active');
-        burger.classList.toggle('active');
-    });
-    
-    // Navigation scroll effect
-    const navbar = document.querySelector('.navbar');
-    
-    window.addEventListener('scroll', function() {
-        if (window.scrollY > 100) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
-    
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                if (navLinks.classList.contains('active')) {
-                    navLinks.classList.remove('active');
-                    burger.classList.remove('active');
-                }
-            }
-        });
-    });
-    
-    // Contact form handling
-    const contactForm = document.getElementById('contactForm');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            if (!name || !email || !message) {
-                alert('Please fill in all fields');
-                return;
-            }
-            
-            // Here you'd typically send the form data to a server or email service
-            console.log({
-                name,
-                email,
-                message
-            });
-            
-            // Clear form
-            contactForm.reset();
-            
-            // Show success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-        });
-    }
-}); 
+handleScroll(); 

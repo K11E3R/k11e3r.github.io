@@ -50,96 +50,20 @@
 }
 
 /* Light Mode Variables */
-.light-mode {
-    --primary-color: #4c35cc;
-    --primary-color-dark: #3a29a3;
-    --secondary-color: #00a3cc;
-    --text-color: #1a1a2e;
-    --text-color-light: #4a4a6a;
-    --bg-color: #f0f2ff;
-    --bg-color-light: #e0e5ff;
-    --card-bg: #ffffff;
-    --card-border: #dee2e6;
-}
-
-/* Light Mode Background */
-.light-mode .stars {
-    background: #e0e5ff url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png') repeat;
-    opacity: 0.3;
-}
-
-.light-mode .twinkling {
-    background: transparent url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png') repeat;
-    animation: move-twinkle 200s linear infinite;
-    opacity: 0.2;
-}
-
-/* Light Mode-specific styles */
-.light-mode .section-title {
-    text-shadow: 0 0 10px rgba(110, 68, 255, 0.3);
-}
-
-.light-mode .navbar {
-    background-color: rgba(240, 242, 255, 0.8);
-    box-shadow: 0 4px 20px rgba(76, 53, 204, 0.15);
-}
-
-.light-mode .about, 
-.light-mode .contact {
-    background-color: rgba(240, 242, 255, 0.8);
-    box-shadow: 0 10px 30px rgba(76, 53, 204, 0.1);
-}
-
-.light-mode .skill-item,
-.light-mode .project-card,
-.light-mode .contact-form,
-.light-mode .contact-method i {
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 5px 15px rgba(76, 53, 204, 0.1);
-    border: 1px solid rgba(76, 53, 204, 0.1);
-}
-
-.light-mode .project-tech span {
-    background-color: rgba(240, 242, 255, 0.9);
-    color: var(--text-color);
-}
-
-.light-mode .footer {
-    background-color: rgba(224, 229, 255, 0.9);
-    border-top: 1px solid rgba(76, 53, 204, 0.1);
-}
-
-.light-mode .social-links a {
-    background-color: rgba(255, 255, 255, 0.8);
-}
-
-.light-mode .form-group input,
-.light-mode .form-group textarea {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(76, 53, 204, 0.2);
-}
-
-.light-mode .orbit-circle {
-    border: 2px dotted rgba(76, 53, 204, 0.3);
-}
-
-.light-mode .project-btn {
-    background-color: rgba(240, 242, 255, 0.8);
-}
-
-.light-mode .stat::before {
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    opacity: 0.8;
-}
-
-.light-mode .social-icon .fa-github {
-    color: #24292e;
-}
-
-.light-mode .skill-item i,
-.light-mode .contact-method i,
-.light-mode .stat-icon {
-    color: var(--primary-color);
+[data-theme="light"] {
+    --bg-color: #f0f5ff;
+    --text-color: #18184a;
+    --text-color-light: #3a3a7c;
+    --primary-color: #5046e5;
+    --secondary-color: #7c45e6;
+    --linkedin-color: #0a66c2;
+    --card-bg: rgba(255, 255, 255, 0.85);
+    --card-border: rgba(180, 180, 240, 0.4);
+    --nav-bg: rgba(255, 255, 255, 0.85);
+    --shadow-sm: 0 2px 8px rgba(70, 70, 200, 0.1);
+    --shadow-md: 0 4px 16px rgba(70, 70, 200, 0.15);
+    --shadow-lg: 0 8px 30px rgba(70, 70, 200, 0.2);
+    --shadow-xl: 0 15px 50px rgba(70, 70, 200, 0.3);
 }
 
 /* Space Background */
@@ -1272,4 +1196,115 @@ body.dark-mode .social-icon .fa-github {
         flex-direction: column;
         gap: var(--spacing-lg);
     }
+}
+
+/* Light Mode Specific Styles */
+[data-theme="light"] .stars, 
+[data-theme="light"] .twinkling {
+    opacity: 0.3;
+}
+
+[data-theme="light"] .navbar {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .hero-text h1,
+[data-theme="light"] .hero-text h2 {
+    color: var(--text-color);
+    text-shadow: 0 2px 10px rgba(80, 70, 229, 0.2);
+}
+
+[data-theme="light"] .section-title {
+    color: var(--text-color);
+}
+
+[data-theme="light"] .about,
+[data-theme="light"] .contact {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+[data-theme="light"] .stat {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .skill-item {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-sm);
+}
+
+[data-theme="light"] .project-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: var(--shadow-md);
+}
+
+[data-theme="light"] .project-tech span {
+    background-color: rgba(230, 235, 255, 0.9);
+    color: var(--text-color);
+}
+
+[data-theme="light"] .project-btn {
+    background-color: rgba(230, 235, 255, 0.9);
+}
+
+[data-theme="light"] .contact-method i {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .contact-form {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea {
+    background-color: rgba(240, 245, 255, 0.9);
+    border: 1px solid var(--card-border);
+}
+
+[data-theme="light"] .footer {
+    background-color: rgba(240, 245, 255, 0.9);
+}
+
+[data-theme="light"] .social-links a {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+    position: relative;
+    width: 40px;
+    height: 20px;
+    margin-left: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.theme-toggle i {
+    font-size: 1rem;
+    transition: opacity var(--transition-normal);
+}
+
+.theme-toggle .fa-sun {
+    color: #ffba08;
+}
+
+.theme-toggle .fa-moon {
+    color: #8896e9;
+}
+
+[data-theme="dark"] .fa-sun {
+    opacity: 0.3;
+}
+
+[data-theme="light"] .fa-moon {
+    opacity: 0.3;
+}
+
+/* Light mode specific hover states */
+[data-theme="light"] .project-btn:hover {
+    background-color: var(--primary-color);
+    color: white;
 } 
