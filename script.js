@@ -6,6 +6,7 @@ const themeToggle = document.querySelector('.theme-toggle');
 const contactForm = document.getElementById('contactForm');
 const sections = document.querySelectorAll('section');
 const navItems = document.querySelectorAll('.nav-links a');
+const body = document.querySelector('body');
 
 // Theme Management
 const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -18,7 +19,9 @@ document.documentElement.setAttribute('data-theme', savedTheme);
 console.log('Theme set to:', savedTheme);
 
 // Toggle between dark and light mode
-function toggleTheme() {
+function toggleTheme(e) {
+    e.stopPropagation(); // Prevent click from closing mobile nav
+    
     const currentTheme = document.documentElement.getAttribute('data-theme');
     const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
     
@@ -42,12 +45,20 @@ function forceThemeRefresh() {
 function toggleNav() {
     navLinks.classList.toggle('active');
     burger.classList.toggle('active');
+    
+    // Prevent body scrolling when nav is open
+    if (navLinks.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+    } else {
+        body.style.overflow = '';
+    }
 }
 
 function closeNav() {
     if (navLinks.classList.contains('active')) {
         navLinks.classList.remove('active');
         burger.classList.remove('active');
+        body.style.overflow = '';
     }
 }
 
@@ -112,7 +123,8 @@ function handleFormSubmit(e) {
 
 // Intersection Observer for animations
 const observerOptions = {
-    threshold: 0.25
+    threshold: 0.1, // Lower threshold for mobile
+    rootMargin: '0px 0px -10% 0px' // Trigger a bit earlier
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -124,7 +136,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Apply observer to elements that should animate on scroll
-document.querySelectorAll('.skill-item, .project-card, .about-stats .stat').forEach(el => {
+document.querySelectorAll('.skill-item, .project-card, .about-stats .stat, .reference-group').forEach(el => {
     el.classList.add('animate-on-scroll');
     observer.observe(el);
 });
@@ -143,8 +155,16 @@ style.textContent = `
         transform: translateY(0);
     }
     
-    .skill-item.in-view, .project-card.in-view, .stat.in-view {
+    .skill-item.in-view, .project-card.in-view, .stat.in-view, .reference-group.in-view {
         transition-delay: calc(var(--animation-order, 0) * 100ms);
+    }
+    
+    @media (prefers-reduced-motion: reduce) {
+        .animate-on-scroll {
+            opacity: 1;
+            transform: none;
+            transition: none;
+        }
     }
 `;
 document.head.appendChild(style);
@@ -162,12 +182,63 @@ document.querySelectorAll('.stat').forEach((el, index) => {
     el.style.setProperty('--animation-order', index);
 });
 
+document.querySelectorAll('.reference-group').forEach((el, index) => {
+    el.style.setProperty('--animation-order', index % 4);
+});
+
+// Close nav when clicking outside
+document.addEventListener('click', (e) => {
+    const isClickInside = navLinks.contains(e.target) || burger.contains(e.target);
+    if (!isClickInside && navLinks.classList.contains('active')) {
+        closeNav();
+    }
+});
+
+// Handle orientation change for mobile
+window.addEventListener('orientationchange', () => {
+    // Force layout recalculation
+    setTimeout(() => {
+        window.scrollBy(0, 1);
+        window.scrollBy(0, -1);
+        
+        // Fix for some mobile browsers
+        if (navLinks.classList.contains('active')) {
+            closeNav();
+        }
+    }, 100);
+});
+
 // Event Listeners
 window.addEventListener('scroll', handleScroll);
 window.addEventListener('DOMContentLoaded', forceThemeRefresh);
 themeToggle.addEventListener('click', toggleTheme);
 burger.addEventListener('click', toggleNav);
-navItems.forEach(item => item.addEventListener('click', closeNav));
+
+// Add touch events for better mobile performance
+if ('ontouchstart' in window) {
+    navItems.forEach(item => {
+        item.addEventListener('touchend', (e) => {
+            e.preventDefault();
+            const href = item.getAttribute('href');
+            if (href.startsWith('#')) {
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    closeNav();
+                    setTimeout(() => {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }, 300);
+                }
+            } else {
+                window.location.href = href;
+            }
+        });
+    });
+} else {
+    navItems.forEach(item => item.addEventListener('click', closeNav));
+}
 
 if (contactForm) {
     contactForm.addEventListener('submit', handleFormSubmit);

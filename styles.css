@@ -47,6 +47,13 @@
     --transition-fast: 0.15s ease;
     --transition-normal: 0.3s ease;
     --transition-slow: 0.5s ease;
+
+    /* Fix for mobile address bar */
+    --nav-height: 70px;
+    --safe-area-top: env(safe-area-inset-top, 0px);
+    --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+    --safe-area-left: env(safe-area-inset-left, 0px);
+    --safe-area-right: env(safe-area-inset-right, 0px);
 }
 
 /* Light Mode Variables */
@@ -1357,4 +1364,258 @@ body.dark-mode .social-icon .fa-github {
 [data-theme="light"] .project-btn:hover {
     background-color: var(--primary-color);
     color: white;
+}
+
+/* Mobile Optimization - General */
+@media screen and (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .section-title {
+        font-size: 2.2rem;
+    }
+    
+    .btn {
+        min-width: 140px;
+        padding: 0.7rem 1.2rem;
+    }
+    
+    .hero-text h1 {
+        font-size: 2.3rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.3rem;
+    }
+    
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+    }
+    
+    .about-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .about-button .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 0.8rem;
+    }
+    
+    .skill-item {
+        padding: 0.8rem;
+    }
+    
+    .skill-item i {
+        font-size: 2rem;
+    }
+    
+    .skill-item span {
+        font-size: 0.8rem;
+    }
+    
+    .project-card {
+        min-height: 400px;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+    
+    .contact-form button {
+        width: 100%;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .reference-item a {
+        word-break: break-all;
+    }
+}
+
+/* Mobile Optimization - Navigation */
+@media screen and (max-width: 768px) {
+    .burger {
+        display: block;
+        z-index: 1000;
+    }
+    
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        height: 100vh;
+        background-color: rgba(10, 10, 35, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        transition: right 0.3s ease-in-out;
+        z-index: 999;
+    }
+    
+    .nav-links.active {
+        right: 0;
+    }
+    
+    .nav-links li {
+        margin: 1.2rem 0;
+    }
+    
+    .nav-links a {
+        font-size: 1.2rem;
+    }
+    
+    /* Larger touch targets for mobile */
+    .theme-toggle {
+        width: 44px;
+        height: 44px;
+        padding: 12px;
+    }
+    
+    .theme-toggle i {
+        font-size: 1.2rem;
+    }
+    
+    .back-to-top {
+        width: 50px;
+        height: 50px;
+        bottom: 1.5rem;
+        right: 1.5rem;
+    }
+    
+    .back-to-top i {
+        font-size: 1.4rem;
+    }
+    
+    .project-btn, 
+    .contact-method a,
+    .social-links a {
+        padding: 0.8rem 1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}
+
+/* Improved touch targets and scrolling */
+@media (pointer: coarse) {
+    /* This targets touch devices */
+    a, button, .theme-toggle, .burger, .skill-item, .project-card, .social-links a {
+        cursor: pointer;
+        touch-action: manipulation;
+    }
+    
+    .nav-links a, .footer-links a {
+        padding: 0.7rem;
+    }
+    
+    .back-to-top {
+        opacity: 0.8;
+        pointer-events: auto;
+    }
+    
+    /* Ensures smooth scrolling on iOS */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+/* Fix for references page on mobile */
+@media screen and (max-width: 480px) {
+    .reference-meta {
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .reference-item h4 {
+        font-size: 1rem;
+    }
+    
+    .reference-item p {
+        font-size: 0.9rem;
+    }
+    
+    .reference-tag {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Adjust orbit animation for mobile */
+@media screen and (max-width: 480px) {
+    .orbit-container {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .orbit-circle {
+        width: 160px;
+        height: 160px;
+    }
+    
+    .profile-img-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .planet {
+        width: 20px;
+        height: 20px;
+    }
+}
+
+@supports(padding-top: env(safe-area-inset-top)) {
+    .navbar {
+        padding-top: calc(var(--spacing-md) + var(--safe-area-top));
+        padding-left: calc(var(--spacing-xl) + var(--safe-area-left));
+        padding-right: calc(var(--spacing-xl) + var(--safe-area-right));
+    }
+    
+    .container {
+        padding-bottom: var(--safe-area-bottom);
+    }
+}
+
+/* Optimize content for notched phones */
+@media screen and (max-width: 480px) {
+    .navbar {
+        height: var(--nav-height);
+    }
+    
+    .hero {
+        padding-top: calc(var(--nav-height) + 20px);
+    }
+    
+    /* Add invisible space for iOS bottom bar */
+    .footer-bottom {
+        padding-bottom: max(var(--spacing-md), var(--safe-area-bottom));
+    }
 } 

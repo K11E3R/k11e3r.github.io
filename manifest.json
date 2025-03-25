@@ -1,0 +1,17 @@
+{
+  "name": "Yassine Naanani Portfolio",
+  "short_name": "YN Portfolio",
+  "description": "Professional portfolio for Yassine Naanani - Data Scientist & Developer",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#18184a",
+  "theme_color": "#18184a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+} 
