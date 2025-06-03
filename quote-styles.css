@@ -60,9 +60,9 @@ body:not(.dark-theme) .quote-container::before {
     right: 0;
     height: 20px;
     background-color: #1a1b26;
-    color: #bb9af7; /* Bright purple */
+    color: red !important; /* Bright purple - DEBUG */
     font-size: 0.7rem;
-    font-family: 'VT323', 'Roboto Mono', monospace;
+    font-family: monospace; /* DEBUG VT323, Roboto Mono */
     font-weight: 500;
     display: flex;
     align-items: center;
