@@ -1,0 +1,737 @@
+/* Quote Container Styling for Hero Section */
+.quote-container {
+    max-width: 90%;
+    margin: 1rem 0 0 0;
+    padding: 0.6rem 0.8rem;
+    background-color: rgba(var(--card-bg-rgb, 28, 28, 74), 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(var(--card-border-rgb, 44, 44, 122), 0.25);
+    /* Subtle shine effect */
+    background-image: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.05) 0%,
+        rgba(255, 255, 255, 0) 40%
+    );
+    cursor: default;
+}
+
+/* Subtle hover effect */
+.quote-container:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+    border-color: rgba(var(--primary-color-rgb, 0, 112, 243), 0.3);
+}
+
+/* Dark mode hover enhancement */
+.dark-theme .quote-container:hover {
+    border-color: rgba(110, 68, 255, 0.7);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4), 0 0 15px rgba(110, 68, 255, 0.2);
+}
+
+/* Tokyo-inspired Terminal Light Mode */
+body:not(.dark-theme) .quote-container {
+    background: linear-gradient(135deg, #1a1b26 0%, #24283b 100%);
+    box-shadow: 0 8px 32px rgba(86, 68, 176, 0.5), 0 0 15px rgba(255, 121, 198, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 121, 198, 0.4);
+    border-radius: 12px;
+    padding: 1.5rem 1rem 1rem;
+    position: relative;
+    margin-top: 10px;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+    color: #a9b1d6; /* Tokyo Night text color */
+    font-family: 'Roboto Mono', monospace;
+}
+
+/* Tokyo terminal header bar */
+body:not(.dark-theme) .quote-container::before {
+    content: 'Tokyo Terminal - AI Quote v3.0';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #1a1b26;
+    color: #bb9af7; /* Bright purple */
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid rgba(255, 121, 198, 0.5);
+    z-index: 2;
+    text-shadow: 0 0 5px rgba(255, 121, 198, 0.7);
+}
+
+/* Tokyo cityscape and neon grid background */
+body:not(.dark-theme) .quote-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: 
+        /* Neon grid effect */
+        linear-gradient(90deg, rgba(255, 121, 198, 0.1) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(255, 121, 198, 0.1) 1px, transparent 1px),
+        /* Distant city lights */
+        radial-gradient(circle at 15% 85%, rgba(189, 147, 249, 0.7) 1px, transparent 2px),
+        radial-gradient(circle at 25% 80%, rgba(255, 121, 198, 0.6) 1px, transparent 2px),
+        radial-gradient(circle at 35% 90%, rgba(139, 233, 253, 0.5) 1px, transparent 2px),
+        radial-gradient(circle at 45% 85%, rgba(80, 250, 123, 0.6) 1px, transparent 2px),
+        radial-gradient(circle at 55% 90%, rgba(255, 184, 108, 0.7) 1px, transparent 2px),
+        radial-gradient(circle at 65% 87%, rgba(189, 147, 249, 0.6) 1px, transparent 2px),
+        radial-gradient(circle at 75% 82%, rgba(255, 121, 198, 0.5) 1px, transparent 2px),
+        radial-gradient(circle at 85% 88%, rgba(139, 233, 253, 0.6) 1px, transparent 2px);
+    background-size: 20px 20px, 20px 20px, auto, auto, auto, auto, auto, auto, auto, auto;
+    pointer-events: none;
+    opacity: 0.6;
+    z-index: 0;
+    animation: neon-pulse 8s infinite linear alternate;
+}
+
+/* Terminal mode styling */
+.dark-theme .quote-container {
+    background-color: #000000;
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7), inset 0 0 10px rgba(0, 255, 0, 0.1), 0 0 5px rgba(0, 255, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+    font-family: 'VT323', 'Courier New', monospace;
+    padding: 1.2rem 1rem 0.8rem;
+    border-radius: 5px;
+}
+
+/* Terminal header bar */
+.dark-theme .quote-container::before {
+    content: 'AI Terminal - v2.0.0';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 24px;
+    background-color: #002200;
+    color: #00ff00;
+    font-size: 0.8rem;
+    font-family: 'Roboto Mono', 'VT323', monospace;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    border-bottom: 1px solid rgba(0, 255, 0, 0.5);
+    z-index: 2; /* Ensure it's above the scanlines */
+}
+
+/* Add terminal scanlines to dark mode */
+.dark-theme .quote-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 255, 0, 0.03) 50%,
+        transparent 50%,
+        rgba(0, 255, 0, 0.03) 100%
+    );
+    background-size: 100% 3px;
+    pointer-events: none;
+    opacity: 0.8;
+    z-index: 1; /* Ensure it's visible but below text */
+    animation: scanline 8s infinite linear;
+}
+
+/* Terminal title and controls are handled in the header bar and window-controls */
+/* Removed conflicting ::before rules */
+/* Terminal window controls (dots) - shared style with theme-specific colors */
+.quote-container .window-controls {
+    position: absolute;
+    top: 0;
+    right: 8px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    z-index: 2;
+}
+
+/* Dark theme controls */
+.dark-theme .quote-container .window-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 255, 0, 0.8);
+    border: 1px solid rgba(0, 255, 0, 0.3);
+    box-shadow: 0 0 3px rgba(0, 255, 0, 0.3);
+}
+
+/* Tokyo theme controls with neon colors */
+body:not(.dark-theme) .quote-container .window-controls .control {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 5px currentColor;
+}
+
+body:not(.dark-theme) .quote-container .window-controls .control:nth-child(1) {
+    background-color: #ff79c6; /* Pink */
+    color: #ff79c6;
+}
+
+body:not(.dark-theme) .quote-container .window-controls .control:nth-child(2) {
+    background-color: #8be9fd; /* Cyan */
+    color: #8be9fd;
+}
+
+body:not(.dark-theme) .quote-container .window-controls .control:nth-child(3) {
+    background-color: #50fa7b; /* Green */
+    color: #50fa7b;
+}
+
+/* Command prompt styling - dark theme */
+.dark-theme .quote-container .command-prompt {
+    font-family: 'Roboto Mono', 'VT323', monospace;
+    color: #00ff00;
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+/* Tokyo terminal command prompt styling */
+body:not(.dark-theme) .quote-container .command-prompt {
+    font-family: 'Roboto Mono', monospace;
+    color: #ff79c6; /* Neon pink */
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+    display: flex;
+    align-items: center;
+    text-shadow: 0 0 5px rgba(255, 121, 198, 0.5);
+    margin-top: 10px;
+}
+
+.dark-theme .quote-container .command-prompt::before {
+    content: '>';
+    margin-right: 8px;
+    font-weight: bold;
+    color: #00ff00;
+}
+
+/* Tokyo terminal prompt symbol */
+body:not(.dark-theme) .quote-container .command-prompt::before {
+    content: '⟩';
+    margin-right: 8px;
+    font-weight: bold;
+    color: #bd93f9; /* Purple */
+    text-shadow: 0 0 5px rgba(189, 147, 249, 0.7);
+}
+
+.dark-theme .quote-container .command-prompt .command {
+    font-weight: bold;
+}
+
+/* Tokyo terminal command text */
+body:not(.dark-theme) .quote-container .command-prompt .command {
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff79c6, #bd93f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    color: transparent;
+    text-shadow: none;
+}
+
+/* Command prompt line */
+.dark-theme .quote-container .command-prompt {
+    color: #00ff00;
+    font-family: 'VT323', 'Courier New', monospace;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dark-theme .quote-container .command-prompt::before {
+    content: 'user@ai-terminal:~$ ';
+    color: #00aa00;
+    margin-right: 5px;
+}
+
+.dark-theme .quote-container .command-prompt .command {
+    color: #00ff00;
+    animation: typing 1.5s steps(20, end);
+}
+
+/* Light mode quote mark */
+:root:not(.dark-theme) .quote-container::before {
+    content: '"';
+    position: absolute;
+    top: -12px;
+    left: 6px;
+    font-size: 3rem;
+    color: rgba(150, 200, 255, 0.9);
+    font-family: Georgia, serif;
+    opacity: 0.5;
+    z-index: 1;
+    text-shadow: 0 0 10px rgba(100, 150, 255, 0.8);
+}
+
+/* Styles for the decorative quote mark in dark mode */
+.dark-theme .quote-container.with-quote-mark::before {
+    font-family: 'VT323', 'Courier New', monospace;
+    color: #00ff00; /* Terminal green */
+    opacity: 0.3;   /* Adjusted opacity for dark mode */
+    content: '"';
+    position: absolute;
+    top: -12px;
+    left: 6px;
+    font-size: 3rem;
+    z-index: 3; /* Ensure it appears above scanlines and header */
+}
+
+/* Quote text for dark theme */
+.dark-theme .quote-container .quote-text {
+    font-family: 'VT323', 'Courier New', monospace;
+    color: #00ff00;
+    font-size: 1.1rem;
+    text-align: left;
+    min-height: 4rem; /* Ensure consistent height */
+    margin-bottom: 5px;
+    animation: fadeIn 1s forwards 0.5s;
+    position: relative;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+/* Quote text for Tokyo terminal light theme */
+body:not(.dark-theme) .quote-container .quote-text {
+    font-family: 'Roboto Mono', monospace;
+    color: #f8f8f2; /* Bright text color */
+    font-size: 1rem;
+    text-align: left;
+    min-height: 4rem;
+    margin: 8px 0 10px;
+    animation: fadeIn 1s forwards 0.5s, neon-text-pulse 4s infinite alternate 1s;
+    position: relative;
+    white-space: pre-wrap;
+    word-break: break-word;
+    line-height: 1.6;
+    padding: 4px 0;
+    text-shadow: 0 0 2px #ff79c6, 0 0 5px rgba(255, 121, 198, 0.3);
+    border-radius: 4px;
+    font-style: italic;
+    letter-spacing: 0.01em;
+}
+
+/* Dark theme attribution */
+.dark-theme .quote-container .quote-attribution {
+    font-size: 0.7rem;
+    color: #00aa00;
+    text-align: right;
+    margin-top: 0.25rem;
+    opacity: 0.9;
+}
+
+/* Tokyo terminal quote attribution */
+body:not(.dark-theme) .quote-container .quote-attribution {
+    font-size: 0.7rem;
+    color: #8be9fd; /* Cyan */
+    text-align: right;
+    margin-top: 0.25rem;
+    opacity: 0.8;
+    text-shadow: 0 0 3px rgba(139, 233, 253, 0.5);
+    font-family: 'Roboto Mono', monospace;
+    font-style: italic;
+}
+
+/* Light mode text styling - removed to avoid conflicts with Tokyo terminal theme */
+
+/* Removed conflicting light theme attribution style */
+
+/* Dark mode text styling - Terminal green */
+.dark-theme .quote-text {
+    color: #00ff00; /* Full terminal green */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    opacity: 0.95;
+    letter-spacing: 0.05em;
+    font-family: 'Roboto Mono', 'VT323', monospace;
+    text-align: left;
+    font-size: 0.85rem;
+    overflow-y: auto;
+    max-height: 150px;
+    padding-right: 10px;
+    line-height: 1.5;
+}
+
+.dark-theme .quote-attribution {
+    color: #00ff00; /* Full terminal green */
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    opacity: 0.95;
+    letter-spacing: 0.05em;
+    font-family: 'Roboto Mono', 'VT323', monospace;
+    text-align: left;
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 15px;
+    left: 25px;
+}
+
+.ai-model-tag {
+    display: inline-block;
+    font-size: 0.5rem;
+    padding: 0.1rem 0.3rem;
+    border-radius: 3px;
+    margin-left: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    background-color: rgba(var(--primary-color-rgb, 0, 112, 243), 0.2);
+    color: rgba(80, 70, 229, 0.9);
+    border: 1px solid rgba(80, 70, 229, 0.3);
+    font-weight: 600;
+    vertical-align: middle;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* Dark mode AI model tag enhancement */
+.dark-theme .ai-model-tag {
+    background-color: rgba(110, 68, 255, 0.25);
+    color: #a48fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2), 0 0 5px rgba(110, 68, 255, 0.2);
+    border: 1px solid rgba(110, 68, 255, 0.3);
+}
+
+/* Dark mode AI model tag - Terminal style */
+.dark-theme .ai-model {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #00ff00;
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    border: 1px solid rgba(0, 255, 0, 0.4);
+    text-shadow: 0 0 3px rgba(0, 255, 0, 0.4);
+    font-weight: normal;
+    letter-spacing: 0.05em;
+    font-family: 'VT323', 'Courier New', monospace; /* Changed to VT323 for consistency */
+    padding: 0.05rem 0.3rem;
+    text-transform: uppercase;
+    font-size: 0.45rem;
+}
+
+/* Animation for quote changes */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(5px); }
+    10% { opacity: 1; transform: translateY(0); }
+    90% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-5px); }
+}
+
+/* Subtle shimmer animation */
+@keyframes shimmer {
+    0% { background-position: -100% 0; }
+    100% { background-position: 200% 0; }
+}
+
+/* Twinkling stars animation */
+@keyframes twinkle {
+    0% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.8; transform: scale(1.02); }
+    100% { opacity: 0.6; transform: scale(1); }
+}
+
+/* Terminal typing animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* Blinking cursor animation */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #00ff00 }
+}
+
+/* Cursor style for quotes or attributions with added cursor */
+.dark-theme .cursor {
+    display: inline-block;
+    color: #00ff00;
+    margin-left: 0.1em;
+    font-weight: bold;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+/* Command line styling */
+.dark-theme .command-line {
+    display: flex;
+    margin-bottom: 6px;
+    font-family: 'Roboto Mono', 'VT323', monospace;
+}
+
+.dark-theme .command-line .prompt {
+    color: #0f0;
+    margin-right: 8px;
+}
+
+.dark-theme .command-line .command-text {
+    color: #0f0;
+}
+
+.dark-theme .command-line .output {
+    color: #0f0;
+    opacity: 0.8;
+    padding-left: 24px;
+    white-space: pre-wrap;
+}
+
+/* Scrollbar styling for terminal */
+.dark-theme .quote-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dark-theme .quote-text::-webkit-scrollbar-track {
+    background: rgba(0, 20, 0, 0.3);
+    border-radius: 4px;
+}
+
+.dark-theme .quote-text::-webkit-scrollbar-thumb {
+    background: rgba(0, 255, 0, 0.5);
+    border-radius: 4px;
+}
+
+.dark-theme .quote-text::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 255, 0, 0.7);
+}
+
+/* Terminal scanline animation */
+@keyframes scanline {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+.quote-container {
+    position: relative;
+}
+
+/* Dynamic star elements added via JavaScript */
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+    animation: twinkle 3s ease-in-out infinite alternate;
+    z-index: 1;
+}
+
+/* Planet animations for light mode - dynamic elements */
+body:not(.dark-theme) .quote-container .planet {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 1;
+    animation: orbit 60s linear infinite;
+}
+
+/* Different planet sizes and colors */
+body:not(.dark-theme) .quote-container .planet.small {
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle at center, #20B2AA, #008B8B);
+}
+
+body:not(.dark-theme) .quote-container .planet.medium {
+    width: 15px;
+    height: 15px;
+    background: radial-gradient(circle at center, #FF8C00, #8B4500);
+    animation-duration: 80s;
+}
+
+body:not(.dark-theme) .quote-container .planet.large {
+    width: 20px;
+    height: 20px;
+    background: radial-gradient(circle at center, #FF69B4, #8B3A62);
+    animation-duration: 120s;
+}
+
+/* Planet orbit animations */
+@keyframes orbit {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg) translateX(var(--orbit-radius, 100px)) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg) translateX(var(--orbit-radius, 100px)) rotate(-360deg);
+    }
+}
+
+/* Enhanced twinkle animation for stars */
+@keyframes twinkle {
+    0% {
+        opacity: 0.7;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/* Tokyo terminal neon pulse animation */
+@keyframes neon-pulse {
+    0% {
+        opacity: 0.5;
+        background-position: 0 0;
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 0.5;
+        background-position: 20px 20px;
+    }
+}
+
+/* Tokyo terminal text neon pulse animation */
+@keyframes neon-text-pulse {
+    0% {
+        text-shadow: 0 0 2px #ff79c6, 0 0 5px rgba(255, 121, 198, 0.3);
+    }
+    50% {
+        text-shadow: 0 0 3px #ff79c6, 0 0 7px rgba(255, 121, 198, 0.5), 0 0 10px rgba(255, 121, 198, 0.3);
+    }
+    100% {
+        text-shadow: 0 0 2px #ff79c6, 0 0 5px rgba(255, 121, 198, 0.3);
+    }
+}
+
+/* Create twinkling stars */
+:root:not(.dark-theme) .quote-container .star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.8);
+    animation: twinkle 3s infinite;
+    z-index: 1;
+}
+/*
+.quote-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.05) 25%,
+        rgba(255, 255, 255, 0.1) 50%,
+        rgba(255, 255, 255, 0.05) 75%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    background-size: 200% 100%;
+    pointer-events: none;
+    animation: shimmer 6s infinite linear;
+    border-radius: 5px;
+}
+*/
+
+/*
+    This dark-theme specific shimmer also conflicted with the scanline effect.
+    The scanline effect is defined earlier for .dark-theme .quote-container::after
+*/
+/*
+.dark-theme .quote-container::after {
+    background: linear-gradient(
+        to right,
+        rgba(110, 68, 255, 0) 0%,
+        rgba(110, 68, 255, 0.05) 25%,
+        rgba(0, 201, 255, 0.1) 50%,
+        rgba(110, 68, 255, 0.05) 75%,
+        rgba(110, 68, 255, 0) 100%
+    );
+    animation: shimmer 8s infinite linear;
+    opacity: 0.8;
+}
+*/
+
+.quote-container p {
+    animation: fadeInOut 8s ease-in-out;
+    position: relative;
+    margin: auto;
+    z-index: 1;
+}
+
+/* Loading animation styles */
+.loading-text {
+    display: inline-block;
+}
+
+.loading-dots {
+    display: inline-block;
+    min-width: 20px;
+    text-align: left;
+}
+
+/* Pulsing effect for the loading state */
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.dark-theme .loading-text {
+    color: #00ff00; /* Terminal green instead of gradient */
+    font-family: 'VT323', 'Courier New', monospace;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+:root:not(.dark-theme) .loading-text {
+    color: rgba(30, 30, 60, 0.9);
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quote-container {
+        max-width: 95%;
+        padding: 0.5rem 0.7rem;
+    }
+    
+    .quote-container::before {
+        font-size: 2.5rem;
+        top: -8px;
+        left: 3px;
+        opacity: 0.1;
+    }
+    
+    .quote-text {
+        font-size: 0.7rem;
+        line-height: 1.2;
+        margin-bottom: 0.2rem;
+    }
+    
+    .quote-attribution {
+        font-size: 0.55rem;
+        margin-top: 0.2rem;
+    }
+    
+    .ai-model {
+        font-size: 0.5rem;
+        padding: 0.05rem 0.2rem;
+        margin-left: 0.2rem;
+    }
+}

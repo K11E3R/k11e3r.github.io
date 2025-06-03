@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0">
     <meta name="theme-color" content="#18184a">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <title>Yassine Naanani | Data Scientist & Developer</title>
     <meta name="description" content="Yassine Naanani's professional portfolio - Data Scientist, Mathematician and Software Developer focusing on AI and space technologies">
@@ -12,11 +13,12 @@
     <meta name="author" content="Yassine Naanani">
     <meta name="robots" content="index, follow">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="quote-styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=VT323&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- Mobile app icons -->
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -67,6 +69,10 @@
                         <a href="https://github.com/K11E3R" target="_blank" class="social-icon">
                             <i class="fab fa-github fa-2x"></i>
                         </a>
+                    </div>
+                    <!-- AI Quote Container -->
+                    <div id="quote-container" class="quote-container">
+                        <!-- AI-generated quotes will be dynamically inserted here by JavaScript -->
                     </div>
                 </div>
                 <div class="hero-image">
@@ -432,6 +438,14 @@
         </footer>
     </div>
 
+    <!-- EmailJS SDK for contact form functionality -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+        // Initialize EmailJS - Replace 'YOUR_PUBLIC_KEY' with your actual EmailJS public key
+        (function() {
+            emailjs.init('YOUR_PUBLIC_KEY');
+        })();
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
