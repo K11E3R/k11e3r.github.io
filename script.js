@@ -671,11 +671,16 @@ function showEmailErrorPopup() {
     overlay.className = 'error-popup-overlay';
     const popup = document.createElement('div');
     popup.className = 'error-popup';
-    popup.innerHTML = `
-        <p>💤 Oops! I took an unexpected power nap!<br>
-        Your message is safe in my memory banks—I'll send it right after I boot up! 🚀</p>
-        <button class="error-popup-close">Got it!</button>
-    `;
+    // Randomize error popup message
+    const messages = [
+        `<p>💤 Oops! I took an unexpected power nap!<br>Your message is safe in my memory banks—I'll send it right after I boot up! 🚀</p>`,
+        `<p>😵‍💫 Woah, got caught in a cosmic dust storm! Your message is stowed safely; will be launched once systems clear! 🌌</p>`,
+        `<p>🔌 Low power mode activated! Charging... 📡 Your message will beam out when I'm back online! 📮</p>`,
+        `<p>💾 Saving your message to my neural drive! Stand by for dispatch on next power cycle! 🛠️</p>`,
+        `<p>✨ Terminal says “Zzz…” — I'll whip that message out shortly when I wake up! 🖥️</p>`
+    ];
+    const index = Math.floor(Math.random() * messages.length);
+    popup.innerHTML = messages[index] + '<button class="error-popup-close">Got it!</button>';
     overlay.appendChild(popup);
     document.body.appendChild(overlay);
     popup.querySelector('.error-popup-close').addEventListener('click', () => {
