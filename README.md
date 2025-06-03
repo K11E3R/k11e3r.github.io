@@ -1,97 +1,59 @@
-# Yassine Naanani - Personal Portfolio
+<div align="center">
 
-This is my professional portfolio website, showcasing my skills, projects, and experience as a Data Scientist and AI Enthusiast.
+# ✨ Yassine Naanani ✨
 
-## Website
+### Data Scientist | AI Enthusiast | Creative Problem Solver
 
-View my portfolio at: [https://k11e3r.github.io](https://k11e3r.github.io)
+[Portfolio](https://k11e3r.github.io) | [GitHub](https://github.com/K11E3R)
 
-## Features
+</div>
 
-- Responsive design for all devices
-- Dark/light mode toggle
-- Interactive project showcase
-- Skills categorization
-- Contact form
-- Smooth animations and transitions
+---
 
-## Technologies Used
+<div align="center">
 
-- HTML5
-- CSS3 with custom variables
-- Vanilla JavaScript
-- GitHub Pages for hosting
+## About Me
 
-## Setup and Deployment
+Passionate Data Scientist with expertise in AI and machine learning. I transform complex data into meaningful insights and innovative solutions. My work combines technical excellence with creative problem-solving to build impactful applications.
 
-This website is automatically deployed through GitHub Actions when changes are pushed to the master branch.
+> *"The beautiful thing about learning is that no one can take it away from you."* — B.B. King
 
-Visit the live site at [https://k11e3r.github.io](https://k11e3r.github.io)
+</div>
 
-## Project Structure
+---
 
-```
-portfolio/
-├── index.html       # Main HTML file
-├── styles.css       # CSS styles
-├── script.js        # JavaScript for interactions
-├── README.md        # Project documentation
-```
+<div align="center">
 
-## Getting Started
+## Portfolio Highlights
 
-### Prerequisites
+- 🌓 **Elegant Design** with dark/light mode toggle
+- 💼 **Interactive Projects** showcase with detailed case studies
+- 🧠 **Skills Visualization** across multiple domains
+- 📱 **Fully Responsive** for all devices
+- ✨ **Smooth Animations** for enhanced user experience
 
-- Any modern web browser
+</div>
 
-### Installation
+---
 
-1. Clone the repository
-```bash
-git clone https://github.com/K11E3R/k11e3r.github.io.git
-```
+<div align="center">
 
-2. Navigate to the portfolio directory
-```bash
-cd k11e3r.github.io
-```
+## Tech Stack
 
-3. Open `index.html` in your browser
+**HTML5** • **CSS3** • **Vanilla JavaScript** • **GitHub Pages**
 
-## Customization
+</div>
 
-### Personal Information
+---
 
-Edit the `index.html` file to update your:
-- Name
-- Title/Role
-- Bio/About section
-- Skills
-- Projects
-- Contact information
+<div align="center">
 
-### Styling
+## Unlicensed - All Rights Reserved
 
-The `styles.css` file uses CSS variables for easy customization:
-- Colors
-- Fonts
-- Spacing
-- Animations
+This work is not licensed for public use. All rights are reserved.
 
-## Browser Support
+No permission is granted for any use, modification, or distribution of this code without explicit written permission from the author. This repository is shared publicly for viewing and reference purposes only.
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Opera (latest)
+© 2025 Yassine Naanani
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-
-- Font Awesome for icons
-- Google Fonts for typography
-- Unsplash for placeholder images 
+</div>
