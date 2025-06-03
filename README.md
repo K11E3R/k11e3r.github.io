@@ -48,12 +48,10 @@ Passionate Data Scientist with expertise in AI and machine learning. I transform
 
 <div align="center">
 
-## Unlicensed - All Rights Reserved
+## License
 
-This work is not licensed for public use. All rights are reserved.
+This project is released under [The Unlicense](./LICENSE) - free and unencumbered software released into the public domain.
 
-No permission is granted for any use, modification, or distribution of this code without explicit written permission from the author. This repository is shared publicly for viewing and reference purposes only.
-
-© 2025 Yassine Naanani
+For more information, please refer to [unlicense.org](https://unlicense.org)
 
 </div>
